@@ -19,10 +19,9 @@ $font-family-body: 'Lato', sans-serif;
 
 // Susy Config
 $susy: (
-  'columns': susy-repeat(12),
-  'gutters': .25,
-  'spread': 'wide',
-  'container-spread': 'wide',
+  columns: 12,
+  gutters: .25,
+  container: 960px
 );
 
 // Body
