@@ -1,3 +1,29 @@
+// Font Colors
+$header-color: #353535;
+$body-color: #515151;
+$body-color-light: #979797;
+
+// Font Weight
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+// Anchor
+$anchor-color: #47b8e0;
+$anchor-font-weight: $font-weight-bold;
+
+// Typography
+$font-family-header: 'Raleway', sans-serif;
+$font-family-body: 'Lato', sans-serif;
+
+// Susy Config
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': .25,
+  'spread': 'wide',
+  'container-spread': 'wide',
+);
 
 // Body
 $body-bg: #f5f8fa;
