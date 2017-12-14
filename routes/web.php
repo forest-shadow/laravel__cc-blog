@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('post.post');
+    return view('home');
 });
 
 Route::get('/post', function () {
     return view('post.post');
+});
+
+Route::get('/posts/{tag}', function () {
+    return view('posts.tag-posts');
 });
