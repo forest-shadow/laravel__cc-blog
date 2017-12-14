@@ -1,5 +1,12 @@
 @extends('templates.app')
 
+@section('image-header')
+    @include('post.partials.image', [
+        'url' => asset('img/coding.jpeg'),
+        'alt' => 'Code'
+    ])
+@endsection
+
 @section('main')
     <article class="article">
         <div class="author">

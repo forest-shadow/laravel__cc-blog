@@ -11,6 +11,7 @@
     <title>Blog</title>
 </head>
 <body>
+    @yield('image-header')
     <div class="container">
         @yield('main')
     </div>
