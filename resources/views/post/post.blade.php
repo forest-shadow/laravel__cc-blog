@@ -21,7 +21,7 @@
         <div class="article__body">{{ $post->body }}</div>
 
         @foreach( $post->tags as $tag )
-            <a href="#" class="tag">{{ $tag->name }}</a>
+            <a href="{{ route('posts.tagged', $tag->slug ) }}" class="tag">{{ $tag->name }}</a>
         @endforeach
     </article>
 @endsection

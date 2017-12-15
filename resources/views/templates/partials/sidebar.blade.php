@@ -1,5 +1,8 @@
 <h3>Tags</h3>
-
-<a href="#" class="tag">Coding</a>
-<a href="#" class="tag">Education</a>
-<a href="#" class="tag">Work</a>
+@if ( $tags->count() )
+    @foreach( $tags as $tag )
+        <a href="{{ route('posts.tagged', $tag->slug ) }}" class="tag">{{ $tag->name }}</a>
+    @endforeach
+@else
+    <p>There are no tags to display</p>
+@endif

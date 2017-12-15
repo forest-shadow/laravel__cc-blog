@@ -21,6 +21,7 @@ Route::get('/post/{post}', [
     'uses'  => 'PostController@show'
 ]);
 
-Route::get('/posts/{tag}', function () {
-    return view('posts.tag-posts');
-});
+Route::get('/posts/{tag}', [
+    'as'    => 'posts.tagged',
+    'uses'  => 'PostsController@tagged'
+]);
