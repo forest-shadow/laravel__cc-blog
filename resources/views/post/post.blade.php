@@ -20,7 +20,8 @@
         <h2 class="article__subheader">{{ $post->teaser }}</h2>
         <div class="article__body">{{ $post->body }}</div>
 
-        <a href="#" class="tag">Coding</a>
-        <a href="#" class="tag">Education</a>
+        @foreach( $post->tags as $tag )
+            <a href="#" class="tag">{{ $tag->name }}</a>
+        @endforeach
     </article>
 @endsection
