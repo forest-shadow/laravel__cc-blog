@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/post', function () {
-    return view('post.post');
-});
+Route::get('/post/{post}', [
+    'as'    => 'post.show',
+    'uses'  => 'PostController@show'
+]);
 
 Route::get('/posts/{tag}', function () {
     return view('posts.tag-posts');
