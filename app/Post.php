@@ -15,4 +15,9 @@ class Post extends Model
     {
         return 'slug';
     }
+
+    public function scopeLatestFirst($query)
+    {
+        return $query->orderBy('created_at', 'desc');
+    }
 }

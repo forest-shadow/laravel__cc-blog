@@ -1,32 +1,16 @@
-<div class="post">
-    <h2 class="post__header">
-        <a href="#">Lorem ipsum dolor sit amet.</a>
-    </h2>
-    <div class="post__author">
-        By <a href="#">Somebuddy Someone</a>
-        <span class="post__time">5 days ago</span>
-    </div>
-    <div class="post__preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, sit.</div>
-</div>
-
-<div class="post">
-    <h2 class="post__header">
-        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-    </h2>
-    <div class="post__author">
-        By <a href="#">Somebuddy Someone</a>
-        <span class="post__time">5 days ago</span>
-    </div>
-    <div class="post__preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur iusto quia ullam voluptatibus.</div>
-</div>
-
-<div class="post">
-    <h2 class="post__header">
-        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat!</a>
-    </h2>
-    <div class="post__author">
-        By <a href="#">Somebuddy Someone</a>
-        <span class="post__time">5 days ago</span>
-    </div>
-    <div class="post__preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad inventore nihil omnis quas sunt.</div>
-</div>
+@if ( $posts->count() )
+    @foreach ( $posts as $post )
+        <div class="post">
+            <h2 class="post__header">
+                <a href="{{ route( 'post.show', $post->slug ) }}">{{ $post->title }}</a>
+            </h2>
+            <div class="post__author">
+                By <a href="#">{{ $post->author->fullName() }}</a>
+                <span class="post__time">{{ $post->created_at->diffForHumans() }}</span>
+            </div>
+            <div class="post__preview">{{ $post->teaser }}</div>
+        </div>
+    @endforeach
+@else
+    <p>No posts to show</p>
+@endif
