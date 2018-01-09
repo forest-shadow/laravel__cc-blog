@@ -16,6 +16,11 @@ class Post extends Model
         return $query->orderBy('created_at', 'desc');
     }
 
+    public function scopeIsLive($query)
+    {
+        return $query->where('live', true);
+    }
+
     public function author()
     {
         return $this->belongsTo(Author::class);
